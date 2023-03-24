@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
+import androidx.core.view.get
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.tilek_shambetaliev_hw4.R
@@ -30,11 +31,7 @@ class OnBoardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.viewPager.adapter = adapter
         binding.indicator.setViewPager(binding.viewPager)
-        adapter.registerAdapterDataObserver(binding.indicator.adapterDataObserver);
-
-        if (binding.viewPager.currentItem == 2) {
-            binding.indicator.isVisible = false
-        }
+        adapter.registerAdapterDataObserver(binding.indicator.adapterDataObserver)
 
     }
 
