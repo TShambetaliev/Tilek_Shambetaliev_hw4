@@ -12,7 +12,7 @@
        android:layout_height="match_parent"/>
 
    <me.relex.circleindicator.CircleIndicator3
-       android:visibility="visible"
+       android:visibility="gone"
        android:id="@+id/indicator"
        android:layout_width="wrap_content"
        app:ci_drawable_unselected="@drawable/ic_unselected"
