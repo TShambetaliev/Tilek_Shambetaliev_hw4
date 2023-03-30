@@ -1,4 +1,4 @@
-package com.example.tilek_shambetaliev_hw4.ui.home.adapter
+package com.example.tilek_shambetaliev_hw4.ui.task.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -14,6 +14,12 @@ class TaskAdapter : Adapter<TaskAdapter.TaskViewHolder>() {
     fun addTask(task: Task){
         data.add(0,task)
         notifyItemChanged(0)
+    }
+
+    fun addTasks(task: List<Task>){
+        data.clear()
+        data.addAll(task)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {

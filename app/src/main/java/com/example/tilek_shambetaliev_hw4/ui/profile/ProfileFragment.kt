@@ -10,6 +10,7 @@ import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import com.example.tilek_shambetaliev_hw4.data.local.Pref
 import com.example.tilek_shambetaliev_hw4.databinding.FragmentProfileBinding
+import com.example.tilek_shambetaliev_hw4.utils.loadImage
 
 class ProfileFragment : Fragment() {
 
@@ -32,7 +33,7 @@ class ProfileFragment : Fragment() {
         loadImage()
 
         binding.etImgName.setText(pref.loadText())
-        binding.imgOne.setImageURI(pref.loadImage()?.toUri())
+        binding.imgOne.loadImage(pref.loadImage())
 
     }
 
