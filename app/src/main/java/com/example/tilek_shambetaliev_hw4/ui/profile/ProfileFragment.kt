@@ -17,12 +17,11 @@ class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
     private lateinit var pref: Pref
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= FragmentProfileBinding.inflate(inflater, container, false)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -31,26 +30,23 @@ class ProfileFragment : Fragment() {
 
         pref = Pref(requireContext())
         loadImage()
-
         binding.etImgName.setText(pref.loadText())
         binding.imgOne.loadImage(pref.loadImage())
-
     }
 
     private fun loadImage() {
         binding.imgOne.setOnClickListener {
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
-            intent.type="image/*"
-            startActivityForResult(intent, IMAGE_KEYS )
+            intent.type = "image/*"
+            startActivityForResult(intent, IMAGE_KEYS)
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == IMAGE_KEYS&& resultCode == RESULT_OK && data != null ){
+        if (requestCode == IMAGE_KEYS && resultCode == RESULT_OK && data != null) {
             val image = data.data
             binding.imgOne.setImageURI(data.data)
-
             pref.saveImage(image.toString())
         }
     }

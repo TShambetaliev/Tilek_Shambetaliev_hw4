@@ -31,7 +31,6 @@ class TaskFragment : Fragment() {
             if (binding.etTitle.text.isNotEmpty()) {
                 save()
             } else binding.etTitle.error = "Это поле обязательна для заполнения"
-
             findNavController().navigateUp()
         }
     }

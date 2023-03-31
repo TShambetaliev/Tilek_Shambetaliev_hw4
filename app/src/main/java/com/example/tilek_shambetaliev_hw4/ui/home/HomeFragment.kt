@@ -12,13 +12,11 @@ import com.example.tilek_shambetaliev_hw4.App
 import com.example.tilek_shambetaliev_hw4.R
 import com.example.tilek_shambetaliev_hw4.databinding.FragmentHomeBinding
 import com.example.tilek_shambetaliev_hw4.model.Task
-import com.example.tilek_shambetaliev_hw4.ui.task.adapter.TaskAdapter
+import com.example.tilek_shambetaliev_hw4.ui.home.adapter.TaskAdapter
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
-
     private val binding get() = _binding!!
     private val adapter = TaskAdapter(this::deleteDB)
 
@@ -27,7 +25,6 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
@@ -37,12 +34,10 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         newDB()
-
         binding.rvOne.adapter = adapter
         binding.fabAdd.setOnClickListener {
             findNavController().navigate(R.id.taskFragment)
         }
-
     }
 
     private fun newDB() {
@@ -61,12 +56,12 @@ class HomeFragment : Fragment() {
             .setMessage("Вы уверены что хотите удалить?")
             .setPositiveButton("Да") { dialog, which ->
                 App.db.taskDao().delete(task)
+                dialog.cancel()
                 newDB()
             }
             .setNegativeButton("Нет") { dialog, which ->
                 dialog.cancel()
             }
-
         val alertDialog: AlertDialog = builder.create()
         alertDialog.show()
     }

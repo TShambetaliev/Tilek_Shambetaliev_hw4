@@ -58,8 +58,6 @@ class MainActivity : AppCompatActivity() {
                 supportActionBar?.hide()
             }
             else supportActionBar?.show()
-
         }
-
     }
 }

@@ -33,7 +33,6 @@ class OnBoardingAdapter(
         )
     )
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnBoardingViewHolder {
         return OnBoardingViewHolder(
             ItemOnboardBinding.inflate(
@@ -61,17 +60,13 @@ class OnBoardingAdapter(
             binding.tvSkip.setOnClickListener {
                 onClick()
             }
-
             binding.btnStart.setOnClickListener {
                 onClick()
             }
             binding.tvNextup.setOnClickListener {
                 onNext()
             }
-
             binding.tvNextup.isVisible = adapterPosition != 2
-
         }
-
     }
 }

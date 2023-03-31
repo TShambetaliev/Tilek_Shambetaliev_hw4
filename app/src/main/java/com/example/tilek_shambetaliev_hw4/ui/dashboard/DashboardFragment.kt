@@ -22,9 +22,9 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-                _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
-     return root
+        return root
     }
 
     override fun onDestroyView() {

@@ -1,4 +1,4 @@
-package com.example.tilek_shambetaliev_hw4.ui.task.adapter
+package com.example.tilek_shambetaliev_hw4.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,16 +7,16 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.tilek_shambetaliev_hw4.databinding.ItemTaskBinding
 import com.example.tilek_shambetaliev_hw4.model.Task
 
-class TaskAdapter(private val onClik:(Task)->Unit) : Adapter<TaskAdapter.TaskViewHolder>() {
+class TaskAdapter(private val onClik: (Task) -> Unit) : Adapter<TaskAdapter.TaskViewHolder>() {
 
     private val data: ArrayList<Task> = arrayListOf()
 
-    fun addTask(task: Task){
-        data.add(0,task)
+    fun addTask(task: Task) {
+        data.add(0, task)
         notifyItemChanged(0)
     }
 
-    fun addTasks(task: List<Task>){
+    fun addTasks(task: List<Task>) {
         data.clear()
         data.addAll(task)
         notifyDataSetChanged()
@@ -37,7 +37,6 @@ class TaskAdapter(private val onClik:(Task)->Unit) : Adapter<TaskAdapter.TaskVie
     }
 
     override fun getItemCount(): Int = data.size
-
 
     inner class TaskViewHolder(private val binding: ItemTaskBinding) : ViewHolder(binding.root) {
         fun bind(task: Task) {
