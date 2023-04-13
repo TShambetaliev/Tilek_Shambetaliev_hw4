@@ -40,6 +40,7 @@ class AcceptFragment : Fragment() {
             signInWithPhoneAuthCredential(credential)
         }
     }
+
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(requireActivity()) { task ->

@@ -75,28 +75,28 @@ class AuthFragment : Fragment() {
     }
 
     private val callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-
         override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-
         }
 
         override fun onVerificationFailed(e: FirebaseException) {
             if (e is FirebaseAuthInvalidCredentialsException) {
-            }
-            else if (e is FirebaseTooManyRequestsException) {
-            }
-            else if (e is FirebaseAuthMissingActivityForRecaptchaException) {
+            } else if (e is FirebaseTooManyRequestsException) {
+            } else if (e is FirebaseAuthMissingActivityForRecaptchaException) {
             }
         }
+
         override fun onCodeSent(
             verificationId: String,
             token: PhoneAuthProvider.ForceResendingToken
         ) {
             storedVerificationId = verificationId
-            findNavController().navigate(AuthFragmentDirections.actionAuthFragmentToAcceptFragment(verificationId))
+            findNavController().navigate(
+                AuthFragmentDirections.actionAuthFragmentToAcceptFragment(
+                    verificationId
+                )
+            )
         }
     }
-
 
     private fun auth() {
         oneTapClient.beginSignIn(signInRequest).addOnSuccessListener {

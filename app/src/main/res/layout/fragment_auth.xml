@@ -17,15 +17,24 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/et_number"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneNumberTextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
         android:layout_margin="16dp"
-        android:drawableStart="@drawable/ic_phone"
-        android:hint="наберите номер телефона"
-        android:textSize="16sp"
-        android:backgroundTint="@color/black" />
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_phone"
+            android:hint="наберите номер телефона"
+            android:textSize="16sp"
+            android:backgroundTint="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_send"

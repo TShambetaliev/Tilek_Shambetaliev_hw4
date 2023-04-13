@@ -6,15 +6,24 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <EditText
-        android:id="@+id/et_number_kod"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneNumberTextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
         android:layout_margin="16dp"
-        android:drawableStart="@drawable/ic_phone"
-        android:hint="Введите код"
-        android:textSize="16sp"
-        android:backgroundTint="@color/black" />
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_number_kod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_phone"
+            android:hint="Введите код"
+            android:textSize="16sp"
+            android:backgroundTint="@color/black"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_accept"
